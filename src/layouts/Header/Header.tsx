@@ -1,11 +1,29 @@
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function Header() {
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     isActive ? `${styles.gnavLink} ${styles.gnavLinkActive}` : styles.gnavLink;
 
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    console.log("メニューの開閉状態が変更されました", open);
+  }, [open]);
+
+  // openの間だけスクロール禁止　、“prev=今その瞬間のbodyのstyle属性の値”,
+  // cssを書き換えたり入れ替えているのではなくcssより直近のDOMそのものでstylesそのものでstylesを書き換えている。
+  // 流れはstate変更→再レンダー→DOM更新→useEffect発火(超大事)
+  // return cleanupは登録だけされて実行されるのはstateが再度変更されて新しいeffectが実行される直前、またはコンポーネントが消える直前
+  useEffect(() => {
+    if (!open) return;
+
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    // 閉じたら元に戻す
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
 
   return (
     <header className={styles.header}>
