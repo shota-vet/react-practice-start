@@ -1,5 +1,5 @@
-import PageHeader from "../components/PageHeader.tsx";
-import NewsList, { type NewsItem } from "../components/NewsList.tsx";
+import PageHeader from "../components/PageHeader/PageHeader.tsx";
+import NewsList, { type NewsItem } from "../components/NewsList/NewsList.tsx";
 
 export default function Company() {
   const newsItems2: NewsItem[] = [
@@ -22,7 +22,7 @@ export default function Company() {
   ];
   return (
     <>
-      <PageHeader title="会社概要" />;
+      <PageHeader title="会社概要" />
       {/* ただ表示させるだけならば普通にpageHeader関数を呼んで入れるのと変わらないが、ここでコンポーネントを使うことでReactが「UIを更新する仕組み」とセットで呼んでくれる。例えばstateが変わったらそれも再レンダリングされて画面に変更が反映される。 */}
       <main className="content">
         {/* company-info */}

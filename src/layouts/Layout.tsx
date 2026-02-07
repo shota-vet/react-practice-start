@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 export default function Layout() {
   return (
     <div className="wrapper">
@@ -10,4 +10,5 @@ export default function Layout() {
     </div>
   );
 }
+// 共通部分(Header, Footerコンポーネントとか)をまとめるためのLayout,共通部分が異なるのならば複数のLayoutに分ける（例えばcompany pageにFooterがない場合とか）
 // このoutletの中に <Route path="/" element={<Home />} /><Route path="/message" element={<Message />} /><Route path="/company" element={<Company />} がネストされていて入る

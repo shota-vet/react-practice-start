@@ -1,6 +1,8 @@
-import HomeMv from "../components/home/HomeMv";
-import HomeService from "../components/home/HomeService";
-import NewsList, { type NewsItem } from "../components/NewsList";
+import HomeMv from "../components/HomeMv/HomeMv";
+import HomeService, {
+  type ServiceItem,
+} from "../components/HomeService/HomeService";
+import NewsList, { type NewsItem } from "../components/NewsList/NewsList";
 
 export default function Home() {
   const newsItems: NewsItem[] = [
@@ -18,10 +20,26 @@ export default function Home() {
       dateTime: "2030-02-02",
       label: "2030.02.02",
       title:
-        "人材紹介SNS『スタート』をリリースしました。3/31まで新規登録キャンペーンを開催中です！サービス内で使える500ポイントをプレゼント！",
+        "人材紹介SNS『スタート』をリリースしました。3/31まで新規登録キャンペーンを開催中です!サービス内で使える500ポイントをプレゼント!",
     },
   ];
-
+  const serviceItems: ServiceItem[] = [
+    {
+      icon: "work",
+      title: "人材紹介業",
+      text: "新規サイトの制作はもちろんサイトリニューアルやランディングページの制作も可能です。",
+    },
+    {
+      icon: "location_city",
+      title: "スクール事業",
+      text: "オンラインでWeb制作を学べるスクールを運営しています。",
+    },
+    {
+      icon: "desktop_windows",
+      title: "Webメディア運営",
+      text: "人事系メディアやWebデザイン関連のメディアなどを複数運営しています。",
+    },
+  ];
   return (
     <>
       <HomeMv />
@@ -42,7 +60,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <HomeService />
+        <HomeService items={serviceItems} />
       </main>
     </>
   );

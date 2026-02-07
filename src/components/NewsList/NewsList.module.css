@@ -1,0 +1,39 @@
+.newsInner {
+  display: flex;
+  column-gap: 90px;
+}
+
+.newsBody {
+  flex: 1;
+}
+
+.newsListLink {
+  display: flex;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.newsListLink:hover {
+  color: var(--main-color);
+}
+
+.newsListItem {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.newsListItem:last-child {
+  margin-bottom: 0;
+}
+
+.newsListTitle {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.newsListDate {
+  margin-right: 20px;
+}

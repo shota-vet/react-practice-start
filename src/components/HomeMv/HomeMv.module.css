@@ -1,0 +1,44 @@
+.mv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  background-image: url(/img/pc_mv.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.mvTitleArea {
+  color: #fff;
+  text-align: center;
+}
+
+.mvTitle {
+  font-size: 160px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 0 4px 6px rgb(0 0 0 / 25%);
+  margin-bottom: 10px;
+}
+
+.mvSubtitle {
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+@media screen and (max-width: 767px) {
+  .mv {
+    height: 460px;
+    background-image: url(img/sp_mv.jpg);
+  }
+
+  .mvTitle {
+    font-size: 80px;
+  }
+
+  .mvSubtitle {
+    font-size: 20px;
+  }
+}

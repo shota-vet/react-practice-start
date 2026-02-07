@@ -9,9 +9,9 @@ export default function App() {
       {/* プロバイダー的な役割 */}
       <BrowserRouter>
         <Routes>
-          {/* Layoutを使うことでheaderコンポーネントもURL選択されたURL階層の一部となる */}
+          {/* Layoutを使うことでheaderコンポーネントもURL選択されたURL階層の一部となる、今回はLayoutひとつでできている */}
           <Route element={<Layout />}>
-            {/* URLがpath のとき、elementを画面に描画する */}
+            {/* URLがpath のとき、elementを画面に描画する pathはurlの中身*/}
             <Route path="/" element={<Home />} />
             <Route path="/message" element={<Message />} />
             <Route path="/company" element={<Company />} />

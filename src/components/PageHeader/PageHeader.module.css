@@ -1,0 +1,33 @@
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 190px;
+  background-image: url(/img/pc_header.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.pageHeaderTitleArea {
+  color: #fff;
+  text-align: center;
+}
+
+.pageHeaderTitle {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+@media screen and (max-width: 767px) {
+  .pageHeader {
+    height: 160px;
+    background-image: url(img/sp_header.jpg);
+  }
+
+  .pageHeaderTitle {
+    font-size: 28px;
+  }
+}

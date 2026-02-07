@@ -1,12 +1,14 @@
+import styles from "./PageHeader.module.css";
+
 type Props = {
   title: string;
 };
 
 export default function pageHeader({ title }: Props) {
   return (
-    <div className="page-header">
-      <div className="page-header__titleArea">
-        <h2 className="page-header__title">{title}</h2>
+    <div className={styles.pageHeader}>
+      <div className={styles.pageHeaderTitleArea}>
+        <h2 className={styles.pageHeaderTitle}>{title}</h2>
       </div>
     </div>
   );

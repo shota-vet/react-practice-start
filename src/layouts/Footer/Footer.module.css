@@ -1,0 +1,49 @@
+.footer {
+  color: #fff;
+  padding: 60px 20px 50px;
+  background-color: var(--main-color);
+}
+
+.nav {
+  margin-bottom: 20px;
+}
+
+.navList {
+  display: flex;
+  column-gap: 30px;
+}
+
+.navItem {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+}
+
+.copyright {
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 40px 0 30px;
+  }
+
+  .navList {
+    column-gap: 25px;
+  }
+
+  .navItem {
+    font-size: 12px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+}

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import styles from "./NewsList.module.css";
+
 export type NewsItem = {
   dateTime: string;
   label: string;
@@ -11,17 +13,17 @@ type Props = {
 
 export default function NewsList({ items }: Props) {
   return (
-    <ul className="news-list__list">
+    <ul className="newsListList">
       {/* アロー関数のreturnを省略して{}の代わりに()で書く書き方使っている */}
       {items.map((item) => (
-        <li key={item.dateTime} className="news-list__item">
-          <Link to="#" className="news-list__link">
-            <div className="news-list__date">
-              <time dateTime={item.dateTime} className="news__date">
+        <li key={item.dateTime} className={styles.newsListItem}>
+          <Link to="#" className={styles.newsListLink}>
+            <div className={styles.newsListDate}>
+              <time dateTime={item.dateTime} className={styles.newsDate}>
                 {item.label}
               </time>
             </div>
-            <div className="news-list__title">{item.title}</div>
+            <div className={styles.newsListTitle}>{item.title}</div>
           </Link>
         </li>
       ))}

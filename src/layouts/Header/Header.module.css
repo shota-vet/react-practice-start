@@ -1,0 +1,167 @@
+/*--------------------------------
+ヘッダー
+---------------------------------*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  padding: 30px 70px;
+}
+
+.logo {
+  line-height: 1;
+}
+
+/*--------------------------------
+ グローバルナビ
+---------------------------------*/
+.gnavList {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+}
+
+.gnavItem {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.gnavLink {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.gnavLink:hover {
+  color: var(--main-color);
+}
+
+.gnavLinkActive {
+  color: var(--main-color);
+}
+
+.btnMenu {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  /* ヘッダー */
+  .header {
+    position: relative;
+    height: 60px;
+    padding: 20px;
+  }
+
+  .headerLogo {
+    width: 107px;
+  }
+  /* fixedが画面を基準に設定、スクロールしても同じ場所ということ */
+  .gnav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 180px;
+    height: 100%;
+    background-color: var(--main-color);
+    box-shadow: -10px 0 35px -20px rgb(0 0 0 / 25%);
+  }
+  .gnavOpen {
+    display: block;
+  }
+
+  .gnavList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 180px;
+    padding: 90px 20px 20px 50px;
+    row-gap: 25px;
+  }
+
+  .gnavLink {
+    color: #fff;
+  }
+
+  .gnavLink:hover {
+    color: #fff;
+  }
+
+  .gnavLinkActive {
+    opacity: 0.6;
+  }
+
+  .btnMenu {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 21px 16px;
+    border: none;
+    outline: none;
+    background: none;
+    background-color: var(--main-color);
+    cursor: pointer;
+    appearance: none;
+  }
+
+  .btnMenuLine {
+    display: block;
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transition: all 0.4s;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+
+  .btnMenuLine::before,
+  .btnMenuLine::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: inherit;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+
+  .btnMenuLine::before {
+    top: -8px;
+  }
+
+  .btnMenuLine::after {
+    top: 8px;
+  }
+
+  .btnMenuActive .btnMenuLine {
+    background-color: transparent;
+  }
+
+  .btnMenuActive .btnMenuLine::before,
+  .btnMenuActive .btnMenuLine::after {
+    top: 0;
+    background-color: #fff;
+  }
+
+  .btnMenuActive .btnMenuLine::before {
+    transform: rotate(45deg);
+  }
+
+  .btnMenuActive .btnMenuLine::after {
+    transform: rotate(-45deg);
+  }
+}
